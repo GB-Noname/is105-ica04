@@ -58,6 +58,7 @@ if err!= nil {
 	}
 	defer file.Close()
 	defer file2.Close()
+
 	return byteSlice
 
 }
