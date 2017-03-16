@@ -6,34 +6,31 @@ import (
 	"reflect"
 
 	"./files"
-	//"./lineshift"
+	"./lineshift"
 	//"net/http"
 )
 
 func main() {
 
-	//files.FileToByteslice()
-	//
-	//text1, _ := filepath.Abs("//github.com/uia-worker/is105-ica04/tree/master/files/text1.txt")
-
-	//text1 := http.Get("https://gb-noname.github.io/text1.txt")
-	//text1 := "http://gb-noname.github.io/text1.txt"
 	//fmt.Printf("%s", files.FileToByteslice(text1))
-	//a := files.FileToByteslice("https://gb-noname.github.io/text1.txt")
 
 	urlText1 := "https://gb-noname.github.io/text1.txt"
 	urlText2 := "https://gb-noname.github.io/text2.txt"
 	a := files.FileToByteslice(urlText1)
 	b := files.FileToByteslice(urlText2)
 
+	//fmt.Printf("%x\n", a)
+	//fmt.Printf("%x\n", b)
 
-	//text2, _ := filepath.Abs("httpS//gb-noname.github.io/text1.txt")
-	fmt.Printf("%x\n", a)
-	fmt.Printf("%x\n", b)
-	//b := files.FileToByteslice(text2)
+	if reflect.DeepEqual(a, b) == false {
+		fmt.Println("Filene er ikke identiske")
+	} else {
+		fmt.Println("Filene er identiske")
+	}
+	//fmt.Print(a)
 
-	fmt.Println(reflect.DeepEqual(a, b))
-	fmt.Printf("%s", a)
+	fmt.Println(lineshift.Tester(a))
+	fmt.Println(lineshift.Tester(b))
 	//fmt.Println(reflect.DeepEqual(text1, text2))
 
 	//fmt.Printf("% x\n", files.FileToByteslice(text1))
