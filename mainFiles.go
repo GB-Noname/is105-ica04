@@ -6,6 +6,7 @@ import (
 	"reflect"
 
 	"./files"
+	"./lineshift"
 )
 
 func main() {
@@ -26,4 +27,5 @@ func main() {
 	fmt.Printf("%x\n", files.FileToByteslice(text1))
 	fmt.Printf("%x", files.FileToByteslice(text2))
 
+	lineshift.lineshiftFinder(a, b)
 }
