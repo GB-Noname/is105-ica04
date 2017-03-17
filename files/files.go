@@ -10,9 +10,9 @@ import (
 )
 
 func FileToByteslice(filename string) []byte {
-//new := "test.txt"
-new := "test.txt"
-file, err := os.Create(new)
+
+tempPath := "temp.txt"
+file, err := os.Create(tempPath)
 
 if err!= nil {
 		fmt.Println(err)
@@ -28,7 +28,7 @@ if err!= nil {
 
 
 	    //open a file for writing
-	    file2, err := os.Open(new)
+	    file2, err := os.Open(tempPath)
 	    if err != nil {
 	        log.Fatal(err)
 	    }
@@ -37,7 +37,8 @@ if err!= nil {
 	    if err != nil {
 	        log.Fatal(err)
 	    }
-	    file.Close()
+
+
 	finfo, err := file2.Stat()
 	if err != nil {
 		log.Fatal(err)
@@ -56,8 +57,9 @@ if err!= nil {
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer file.Close()
-	defer file2.Close()
+	//defer file.Close()
+	file2.Close()
+	file.Close()
 
 	return byteSlice
 

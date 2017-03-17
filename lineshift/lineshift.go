@@ -5,16 +5,15 @@ import (
 	"fmt"
 )
 
-func Tester(text1 []byte) string {
-	//text1 := "/GitHub/Org/is105-ica04/files/text1.txt"
-	//var a []byte = files.FileToByteslice(text1)
-	// 0a UTF8 linefeed
+func Tester(text []byte) string {
+
+	//  Unicode linefeed
 	lf := 10
 	lfInt := 0
-	// 0d carriage return
+	//  Unicode carriage return
 	cr := 13
 	crInt := 0
-	// 0c Form feed
+	// Unicode Form feed
 	ff := 12
 	ffInt := 0
 
@@ -22,26 +21,29 @@ func Tester(text1 []byte) string {
 	var buffer bytes.Buffer
 	buffer.WriteString("Linjeendinger i teksten er: ")
 
-	for i := 0; i < len(text1); i++ {
+	for i := 0; i < len(text); i++ {
 		//fmt.Printf("%U", text1[i])
 		//fmt.Println(text1[i])
-		if int(text1[i]) == lf {
+		if int(text[i]) == lf {
 			lfInt++
 		}
-		if int(text1[i]) == cr {
+		if int(text[i]) == cr {
 			crInt++
 		}
-		if int(text1[i]) == ff {
+		if int(text[i]) == ff {
 			ffInt++
 		}
 
 	}
 	if crInt == lfInt {
 		buffer.WriteString("Carriage Return og LineFeed.")
-		buffer.WriteString("Dette betyr at det er fil laget med Windows/DOS system.")
+		buffer.WriteString("Dette betyr at det er fil laget med/for et Windows/DOS system.")
 	}
 	if crInt < lfInt {
-		buffer.WriteString("Kun LineFeed. Dette er en fil laget med UNIX/OSX system.")
+		buffer.WriteString("Kun LineFeed. Dette er en fil laget med/for et UNIX/OSX system.")
+	}
+	if ffInt > 0 {
+		buffer.WriteString("Hvorfor er det form feed her? o.O")
 	}
 	fmt.Println("Antall LF:", lfInt)
 	fmt.Println("Antall CR:", crInt)
