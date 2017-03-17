@@ -17,10 +17,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Println("File name:", fileInfo.Name())
-	fmt.Println("Size in bytes:", fileInfo.Size()) //Størrelse i bytes
-	fmt.Println("Permissions:", fileInfo.Mode())
-	fmt.Println("Last modified:", fileInfo.ModTime()) //sist endret
-	fmt.Println("Is Directory: ", fileInfo.IsDir())
+	fmt.Println("File name:", fileInfo.Name())        //..
+	fmt.Println("Size in bytes:", fileInfo.Size())    //Størrelse i bytes
+	fmt.Println("Permissions:", fileInfo.Mode())      //..
+	fmt.Println("Last modified:", fileInfo.ModTime()) //Sist endret
+	fmt.Println("Is Directory: ", fileInfo.IsDir())   //..
 
 }
