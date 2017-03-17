@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-func Tester(text []byte) string {
+func Tester(text []byte, filename string) string {
 
 	//  Unicode linefeed
 	lf := 10
@@ -45,6 +45,7 @@ func Tester(text []byte) string {
 	if ffInt > 0 {
 		buffer.WriteString("Hvorfor er det form feed her? o.O")
 	}
+	fmt.Println("Resultat for fil: ", filename)
 	fmt.Println("Antall LF:", lfInt)
 	fmt.Println("Antall CR:", crInt)
 

@@ -30,12 +30,12 @@ func main() {
 	}
 	//fmt.Print(a)
 
-	fmt.Println(lineshift.Tester(text1))
-	fmt.Println(lineshift.Tester(text2))
+	fmt.Println(lineshift.Tester(text1, "text1.txt"))
+	fmt.Println(lineshift.Tester(text2, "text2.txt"))
 
-	 delerr := os.Remove("temp.txt")
+	 delErr := os.Remove("temp.txt")
 	 if delerr != nil {
-	 log.Fatal(delerr)
+	 log.Fatal(delErr)
 	 }
 	//fmt.Println(reflect.DeepEqual(text1, text2))
 
