@@ -34,7 +34,7 @@ func main() {
 	fmt.Println(lineshift.Tester(text2, "text2.txt"))
 
 	 delErr := os.Remove("temp.txt")
-	 if delerr != nil {
+	 if delErr != nil {
 	 log.Fatal(delErr)
 	 }
 	//fmt.Println(reflect.DeepEqual(text1, text2))
