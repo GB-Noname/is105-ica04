@@ -22,7 +22,7 @@ func main() {
 
 	//fmt.Printf("%x\n", a)
 	//fmt.Printf("%x\n", b)
-
+// DeepEqual tester om byter er identiske 
 	if reflect.DeepEqual(text1, text2) == false {
 		fmt.Println("Filene er ikke identiske")
 	} else {
