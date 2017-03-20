@@ -58,5 +58,5 @@ func FileToByteslice(filename string) []byte {
 	file.Close()
 
 	return byteSlice
-
+//the laser is ready to fire
 }
