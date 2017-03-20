@@ -3,9 +3,10 @@ package main
 import (
 	"fmt"
 	//"path/filepath"
-	"reflect"
-	"os"
 	"log"
+	"os"
+	"reflect"
+
 	"./files"
 	"./lineshift"
 	//"net/http"
@@ -17,7 +18,7 @@ func main() {
 
 	urlText1 := "https://gb-noname.github.io/text1.txt"
 	urlText2 := "https://gb-noname.github.io/text2.txt"
-	text1:= files.FileToByteslice(urlText1)
+	text1 := files.FileToByteslice(urlText1)
 	text2 := files.FileToByteslice(urlText2)
 
 	//fmt.Printf("%x\n", a)
@@ -33,10 +34,10 @@ func main() {
 	fmt.Println(lineshift.Tester(text1, "text1.txt"))
 	fmt.Println(lineshift.Tester(text2, "text2.txt"))
 
-	 delErr := os.Remove("temp.txt")
-	 if delerr != nil {
-	 log.Fatal(delErr)
-	 }
+	delErr := os.Remove("temp.txt")
+	if delErr != nil {
+		log.Fatal(delErr)
+	}
 	//fmt.Println(reflect.DeepEqual(text1, text2))
 
 	//fmt.Printf("% x\n", files.FileToByteslice(text1))
