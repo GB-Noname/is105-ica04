@@ -9,7 +9,7 @@ import (
 )
 
 func FileToByteslice(filename string) []byte {
-	// her opprette TempPath fordi man ikke midlertidig kan åpne filen fra serveren, bare kopiere info fra den
+	// her opprette TempPath fordi man ikke midlertidig kan åpne filen fra serveren, bare kopiere info fra den lul
 	tempPath := "temp.txt"
 	file, err := os.Create(tempPath)
 
