@@ -4,7 +4,10 @@ import (
 	"bytes"
 )
 
-func lineshiftFinder(text1 byte, text2 byte) string {
+func LineshiftFinder(text1 byte, text2 byte) string {
+	//text1, _ := filepath.Abs("/Users/Ann Margrethe/Documents/GitHub/GB-noname/is105-ica04/files/text1.txt")
+	//a := files.FileToByteslice(text1)
+
 	// 0a linefeed UTF-8
 	lf := "0a"
 	lfInt := 0
@@ -20,13 +23,13 @@ func lineshiftFinder(text1 byte, text2 byte) string {
 
 	for i := 0; i < len(text1); i++ {
 
-		if text1[i] == lf {
+		if text1 == lf {
 			lfInt++
 		}
-		if text1[cr] == cr {
+		if text1(i) == cr {
 			crInt++
 		}
-		if text1[ff] == ff {
+		if text1(i) == ff {
 			ffInt++
 		}
 
