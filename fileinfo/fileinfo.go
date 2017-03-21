@@ -31,6 +31,6 @@ func main() {
 	fmt.Println("File name:", file.Name())      //..
 	fmt.Println("Permissions:", file.Mode())    //..
 	fmt.Println("Is Directory: ", file.IsDir()) //..
-	
+
 
 }
