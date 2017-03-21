@@ -24,7 +24,7 @@ func main() {
 	gibibytes = (mibibytes / 1024)
 
 	fmt.Println("Information about a file", arg)
-	fmt.Println("File size in bytes: ", bytes, "File size in kilobytes: ", kibibytes, "File size in megabytes: ", mibibytes, "File size in gigabytes: ", gibibytes)
+	fmt.Println("File size in bytes: ", bytes, "File size in kibibytes: ", kibibytes, "File size in mibibytes: ", mibibytes, "File size in gibibytes: ", gibibytes)
 	fmt.Println("Permissions:", file.Mode())    //..
 	mode := file.Mode()
 	fmt.Println("Is a directory: "	, mode.IsDir())
