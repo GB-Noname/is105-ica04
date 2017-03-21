@@ -1,8 +1,17 @@
 package main
 
 import (
+<<<<<<< HEAD
+	"fmt"
+	"os"
+=======
 "fmt"
 "os"
+<<<<<<< HEAD
+=======
+
+>>>>>>> e69105e61acffa41b7993e917702ffa591f1230f
+>>>>>>> f237e2e1961fcff448b2c95126da648346e5ef6c
 )
 
 func main() {
@@ -23,9 +32,14 @@ func main() {
 	var gibibytes float64
 	gibibytes = (mibibytes / 1024)
 
+<<<<<<< HEAD
 	fmt.Println("Information about a file", arg)
+=======
+	fmt.Println("Information about a file")
+>>>>>>> f237e2e1961fcff448b2c95126da648346e5ef6c
 	fmt.Println("File size in bytes: ", bytes, "File size in kilobytes: ", kibibytes, "File size in megabytes: ", mibibytes, "File size in gigabytes: ", gibibytes)
 	fmt.Println("Permissions:", file.Mode())    //..
+<<<<<<< HEAD
 	mode := file.Mode()
 	fmt.Println("Is a directory: ", mode.IsDir())
 	fmt.Println("Is a regular file", mode.IsRegular())
@@ -56,5 +70,16 @@ func main() {
 	} else {
 		fmt.Println("Is not a symbolic link")
 	}
+=======
+	fmt.Println("Is Directory: ", file.IsDir()) //..
+<<<<<<< HEAD
+	fmt.Println("Is regular file", file.IsRegular())
 
 }
+=======
+	fmt.Printf("System Interface type: %T\n", file.Sys())
+	//fmt.Printf("System info: %+v\n\n", file.Sys())
+>>>>>>> f237e2e1961fcff448b2c95126da648346e5ef6c
+
+}
+>>>>>>> e69105e61acffa41b7993e917702ffa591f1230f
