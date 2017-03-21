@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"os"
-	"path/filepath"
 )
 
 var file os.FileInfo
@@ -25,12 +24,11 @@ func main() {
 	var gigabytes float64
 	gigabytes = (megabytes / 1024)
 
-
 	fmt.Println("Information about a file")
 	fmt.Println("File size in bytes: ", bytes, "File size in kilobytes: ", kilobytes, "File size in megabytes: ", megabytes, "File size in gigabytes: ", gigabytes)
 	fmt.Println("File name:", file.Name())      //..
 	fmt.Println("Permissions:", file.Mode())    //..
 	fmt.Println("Is Directory: ", file.IsDir()) //..
-
+	fmt.Println("Is regular file", file.IsRegular())
 
 }
