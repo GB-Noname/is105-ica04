@@ -2,13 +2,8 @@ package main
 
 import (
 "fmt"
-
 "os"
-
 )
-
-type FileMode uint32
-
 
 func main() {
 	arg := os.Args[1]
@@ -28,13 +23,38 @@ func main() {
 	var gibibytes float64
 	gibibytes = (mibibytes / 1024)
 
-
-	fmt.Println("Information about a file")
+	fmt.Println("Information about a file", arg)
 	fmt.Println("File size in bytes: ", bytes, "File size in kilobytes: ", kibibytes, "File size in megabytes: ", mibibytes, "File size in gigabytes: ", gibibytes)
-	fmt.Println("File name:", file.Name())      //..
 	fmt.Println("Permissions:", file.Mode())    //..
-	fmt.Println("Is Directory: ", file.IsDir()) //..
-	fmt.Printf("System Interface type: %T\n", file.Sys())
-	//fmt.Printf("System info: %+v\n\n", file.Sys())
+	mode := file.Mode()
+	fmt.Println("Is a directory: ", mode.IsDir())
+	fmt.Println("Is a regular file", mode.IsRegular())
+
+
+	if mode&os.ModeAppend != 0 {
+		fmt.Println("Is Append only file")
+	} else {
+		fmt.Println("Is not append only file")
+	}
+	if mode&os.ModeDevice != 0 {
+		fmt.Println("Is a device file")
+	} else {
+		fmt.Println("Not a device file")
+	}
+	if mode&os.ModeCharDevice != 0 {
+		fmt.Println("Is a UNIX character device")
+	} else {
+		fmt.Println("Is not a UNIX character device")
+	}
+	if mode&os.ModeType != 0 {
+		fmt.Println("Is a UNIX block device")
+	} else {
+		fmt.Println("Is not a UNIX block device")
+	}
+	if mode&os.ModeSymlink != 0 {
+		fmt.Println("Is a symbolic link")
+	} else {
+		fmt.Println("Is not a symbolic link")
+	}
 
 }
