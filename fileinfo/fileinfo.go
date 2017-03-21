@@ -1,35 +1,40 @@
 package main
 
 import (
-	"fmt"
-	"os"
+"fmt"
+
+"os"
+
 )
 
-var file os.FileInfo
+type FileMode uint32
+
 
 func main() {
 	arg := os.Args[1]
 
 	file, _ := os.Stat(arg)
 
+
 	var bytes int64
 	bytes = file.Size()
 
-	var kilobytes int64
-	kilobytes = (bytes / 1024)
+	var kibibytes int64
+	kibibytes = (bytes / 1024)
 
-	var megabytes float64
-	megabytes = (float64)(kilobytes / 1024) // cast to type float64
+	var mibibytes float64
+	mibibytes = (float64)(kibibytes / 1024) // cast to type float64
 
-	var gigabytes float64
-	gigabytes = (megabytes / 1024)
+	var gibibytes float64
+	gibibytes = (mibibytes / 1024)
 
 
 	fmt.Println("Information about a file")
-	fmt.Println("File size in bytes: ", bytes, "File size in kilobytes: ", kilobytes, "File size in megabytes: ", megabytes, "File size in gigabytes: ", gigabytes)
+	fmt.Println("File size in bytes: ", bytes, "File size in kilobytes: ", kibibytes, "File size in megabytes: ", mibibytes, "File size in gigabytes: ", gibibytes)
 	fmt.Println("File name:", file.Name())      //..
 	fmt.Println("Permissions:", file.Mode())    //..
 	fmt.Println("Is Directory: ", file.IsDir()) //..
-
+	fmt.Printf("System Interface type: %T\n", file.Sys())
+	//fmt.Printf("System info: %+v\n\n", file.Sys())
 
 }
