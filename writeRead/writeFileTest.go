@@ -22,7 +22,7 @@ func main() {
 	check(err)
 
 	// For more granular writes, open a file for writing.
-	f, err := os.Create("C:\Github/is105-ica04/tmp/dat2")
+	f, err := os.Create("C:/Github/is105-ica04/tmp/dat2")
 	check(err)
 
 	// It's idiomatic to defer a `Close` immediately
