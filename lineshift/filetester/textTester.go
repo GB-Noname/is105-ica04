@@ -1,4 +1,4 @@
-package main
+package lineshift
 
 import ("fmt"
 
@@ -14,8 +14,8 @@ const byteSlice = "\x48\x65\x6e\x72\x69\x6b\x20\x41\x72\x6e\x6f\x6c\x64\x20\x57\
 	"\x6d\x61\x6e\x20\x65\x74\x20\x70\x61\x72\x61\x64\x69\x73\x20\x6d\x65\x67\x20\x62\xf8\x64\x0a\x20\x61\x76\x20\x70\x61\x6c\x6d\x65\x72\x20\x6f\x76\x65\x72\x73\x76\x65\x76\x65\x74\x2e\x0a"
 //var sliceMap map[string]int
 
-func main() {
 
+func FileStatCounter(byteSlice []byte) {
 	var sliceMap map[string]int
 	sliceMap = make(map[string]int)
 
@@ -61,18 +61,19 @@ func main() {
 
 	//c2 := 5
 	//for i2 := 0; i2 < c2; i2++ {
-		//test := 0
-		//max := 5
+	//test := 0
+	//max := 5
 
-		//fmt.Println("current" ,x)
-		//var slicer int = 0
-		for v := 0; v < 5 ; v++ {
-			//x := a[v:6]
-			//fmt.Println(x)
-			//fmt.Println(v)
-			x1 := a[v]
-			//fmt.Println(x1)
-			fmt.Printf("Character %s with %d uses \n", n[x1], a[v])
+	//fmt.Println("current" ,x)
+	//var slicer int = 0
+	fmt.Println("The most used characters in this file is:")
+	for v := 0; v < 5 ; v++ {
+		//x := a[v:6]
+		//fmt.Println(x)
+		//fmt.Println(v)
+		x1 := a[v]
+		//fmt.Println(x1)
+		fmt.Printf("Character %s with %d uses \n", n[x1], a[v])
 		//slicer = v
 		//fmt.Print(x)
 		//sliceS := n[i2]

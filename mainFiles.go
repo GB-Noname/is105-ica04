@@ -35,6 +35,11 @@ func main() {
 
 	lineshift.Tester(text2, "text2.txt")
 	//TesterWithArgs()
+	bigfile := files.FileToByteslice("files/pg100.txt")
+
+	lineshift.FileStatCounter(bigfile)
+	lineshift.Tester(bigfile,"files/pg100.txt" )
+	//lineshift.AmountOfLines()
 
 	 delErr := os.Remove("temp.txt")
 	 if delErr != nil {
