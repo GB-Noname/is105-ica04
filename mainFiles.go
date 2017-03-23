@@ -40,6 +40,8 @@ func main() {
 	lineshift.FileStatCounter(bigfile)
 	lineshift.Tester(bigfile,"files/pg100.txt" )
 	//lineshift.AmountOfLines()
+	//files.Buffio("temp.txt")
+	files.IoUtil("files/text1.txt")
 
 	 delErr := os.Remove("temp.txt")
 	 if delErr != nil {
