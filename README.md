@@ -1,26 +1,22 @@
 # is105-ica04
 
 ### Oppgave 1
-https://github.com/GB-Noname/is105-ica04/tree/master/lineshift (må oppdateres)
+https://github.com/GB-Noname/is105-ica04/tree/master/lineshift 
 
-lineshift.go
+b. lineshift.go
 
 ### Oppgave 2 
 
-fileinfo.go
+https://github.com/GB-Noname/is105-ica04/...
+
+a. fileinfo.go 
 
 ### Oppgave 3 
+
 https://github.com/GB-Noname/is105-ica04/tree/master/files
 
-readwrite.go
- 
-benchmarks_test fileinfo_test.go
+b. kjøres i mainFiles.go, kode ligger i /files
 
-https://github.com/GB-Noname/is105-ica04/tree/master/lineshift/filetester 
-lineshiftTester.go textTester.go
+c. benchmarks_test
 
 
-
-mainFiles.go
-files.go
-buffReader.go 
