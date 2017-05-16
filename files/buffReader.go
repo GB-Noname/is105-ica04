@@ -19,7 +19,7 @@ func IoUtil (filename string) {
 
 	dat, err := ioutil.ReadFile(filename)
 	check(err)
-	fmt.Print(string(dat))
+	//fmt.Print(string(dat))
 	ioutil.WriteFile("temp.txt", dat, 0644)
 	// You'll often want more control over how and what
 	// parts of a file are read. For these tasks, start
