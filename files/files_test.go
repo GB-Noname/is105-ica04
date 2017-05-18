@@ -23,12 +23,12 @@ func benchmarkIoUtil(filename string, b*testing.B) {
 
 func BenchmarkIoUtil(b *testing.B) {benchmarkIoUtil("text1.txt",b) }
 
-func benchmarkFireader(filename string, b*testing.B) {
+func benchmarkFireader(b*testing.B) {
 	for fi:=0;fi<b.N;fi++{
 		Fireader()
 	}
 
 }
 
-func   BenchmarkFireader(b *testing.B) {benchmarkFireader("text1.txt",b) }
+func   BenchmarkFireader(b *testing.B) {benchmarkFireader(b) }
 

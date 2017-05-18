@@ -7,7 +7,7 @@ import (
 
 func Fireader() {
 	// open input file
-	fi, err := os.Open("./files/text1.txt")
+	fi, err := os.Open("./text1.txt")
 	if err != nil {
 		panic(err)
 	}
