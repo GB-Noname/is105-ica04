@@ -6,20 +6,20 @@ import (
 	"log"
 	"os"
 	"reflect"
-
 	"./files"
-	"./lineshift"
-	//"net/http"
-)
 
+	"./lineshift/filetester"
+	//"net/http"
+
+)
 func main() {
 
 	//fmt.Printf("%s", files.FileToByteslice(text1))
 
 	urlText1 := "https://gb-noname.github.io/text1.txt"
 	urlText2 := "https://gb-noname.github.io/text2.txt"
-	text1 := files.FileToByteslice(urlText1)
-	text2 := files.FileToByteslice(urlText2)
+	text1 := files.WebPath(urlText1)
+	text2 := files.WebPath(urlText2)
 
 	//fmt.Printf("%x\n", a)
 	//fmt.Printf("%x\n", b)
@@ -31,8 +31,17 @@ func main() {
 	}
 	//fmt.Print(a)
 
-	fmt.Println(lineshift.Tester(text1, "text1.txt"))
-	fmt.Println(lineshift.Tester(text2, "text2.txt"))
+	lineshift.Tester(text1, "text1.txt")
+
+	lineshift.Tester(text2, "text2.txt")
+	//TesterWithArgs()
+	bigfile := files.FileToByteslice("files/pg100.txt")
+
+	lineshift.FileStatCounter(bigfile)
+	lineshift.Tester(bigfile,"files/pg100.txt" )
+	//lineshift.AmountOfLines()
+	//files.Buffio("temp.txt")
+	files.IoUtil("files/text1.txt")
 
 	 delErr := os.Remove("temp.txt")
 	 if delErr != nil {
@@ -47,3 +56,4 @@ func main() {
 	//fmt.Println(lineshift.Tester(a))
 
 }
+

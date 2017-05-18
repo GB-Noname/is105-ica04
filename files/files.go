@@ -25,12 +25,7 @@ func FileToByteslice(filename string) []byte {
 	}
 
 	//open a file for writing
-	file2, err := os.Open(tempPath)
-	if err != nil {
-		log.Fatal(err)
-	}
-	// Use io.Copy to just dump the response body to the file. This supports huge files
-	_, err = io.Copy(file, response.Body)
+	file2, err := os.Open(filename)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -40,7 +35,7 @@ func FileToByteslice(filename string) []byte {
 		log.Fatal(err)
 	}
 	size_of_slice := finfo.Size()
-	defer response.Body.Close()
+
 
 	// The file.Read() function can read a
 	// tiny file into a large byte slice,
@@ -55,8 +50,32 @@ func FileToByteslice(filename string) []byte {
 	}
 	//defer file.Close()
 	file2.Close()
-	file.Close()
+	//file.Close()
 
 	return byteSlice
 
+}
+
+func WebPath (url string) []byte {
+	// her opprettes TempPath fordi man ikke midlertidig kan åpne filen fra serveren, bare kopiere info fra den
+	tempPath := "temp.txt"
+	file, err := os.Create(tempPath)
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	response, e := http.Get(url)
+	if e != nil {
+		log.Fatal(e)
+	}
+
+	// Dumper response body til filen med io.Copy. Kan behandle store mengder data
+	_, err = io.Copy(file, response.Body)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer response.Body.Close()
+	defer file.Close()
+	return FileToByteslice(tempPath)
 }
