@@ -9,20 +9,6 @@ import (
 )
 
 func FileToByteslice(filename string) []byte {
-	// her opprette TempPath fordi man ikke midlertidig kan åpne filen fra serveren, bare kopiere info fra den lul
-	tempPath := "temp.txt"
-	file, err := os.Create(tempPath)
-
-	if err != nil {
-		fmt.Println(err)
-	}
-	// Open file for reading
-	url := filename
-	// don't worry about errors
-	response, e := http.Get(url)
-	if e != nil {
-		log.Fatal(e)
-	}
 
 	//open a file for writing
 	file2, err := os.Open(filename)
@@ -48,16 +34,15 @@ func FileToByteslice(filename string) []byte {
 	if err != nil {
 		log.Fatal(err)
 	}
-	//defer file.Close()
+
 	file2.Close()
-	//file.Close()
 
 	return byteSlice
 
 }
 
 func WebPath (url string) []byte {
-	// her opprettes TempPath fordi man ikke midlertidig kan åpne filen fra serveren, bare kopiere info fra den
+
 	tempPath := "temp.txt"
 	file, err := os.Create(tempPath)
 

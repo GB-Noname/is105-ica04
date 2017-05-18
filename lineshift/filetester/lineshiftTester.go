@@ -37,16 +37,15 @@ func Tester(text []byte, filename string) {
 
 	}
 	if crInt == lfInt {
-		buffer.WriteString("Carriage Return og LineFeed.")
-		buffer.WriteString("Dette betyr at det er fil laget med/for et Windows/DOS system.")
+		buffer.WriteString("Carriage Return og LineFeed. ")
+		buffer.WriteString("Dette betyr at det er fil laget med/for et Windows/DOS system. ")
 	}
 	if crInt < lfInt && crInt == 0{
-		buffer.WriteString("Kun LineFeed. Dette er en fil laget med/for et UNIX/OSX system.")
-	} else {
-		buffer.WriteString("Ulik mengde CR og LF linjeslutt! Feil i fil?")
+		buffer.WriteString("Kun LineFeed. Dette er en fil laget med/for et UNIX/OSX system. ")
 	}
+
 	if crInt > 0 && lfInt == 0 {
-		buffer.WriteString("Kun Carriage Return! Sansyneligvis gammel fil fra classic Mac OS < v9")
+		buffer.WriteString("Kun Carriage Return! Sansyneligvis gammel fil fra classic Mac OS < v9 ")
 		lfIntT = crInt
 	}
 	fmt.Println("Resultat for fil: ", filename)
