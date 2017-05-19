@@ -1,5 +1,10 @@
 ﻿# is105-ica04
 
+#### Bidragsytere: 
+
+I Github står det 6 contributors. Alle har bidratt, vi har jobbet i team. 
+adrianlo har samarbeidet med CastleDev. 
+
 #### Oppgave 1
 https://github.com/GB-Noname/is105-ica04/tree/master/lineshift 
 
