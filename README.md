@@ -56,9 +56,7 @@ func Buffio leser filen. Peek(n:5) returnerer de første (n) bytes uten å lese 
 
 c. files_test.go
 
-	func benchmarkFiles åpner filen som er gitt i filename i files.og sjekker tørrelsen og hvor lang tid den bruker på å gå gjennom alle elementene i slicen
-	
-	func benchmarkIoUtil leser filen som blir referert til i buffReader.go og går gjennom loopen, stopper også starter den igjen.
-
-	func benchmarkFireader åpner input filen i readwrite.go (func Firereader) og skriver og leser en output fil som den oppretter.
+func benchmarkFiles åpner filen som er gitt i filename i files.og sjekker tørrelsen og hvor lang tid den bruker på å gå gjennom alle elementene i slicen.	
+func benchmarkIoUtil leser filen som blir referert til i buffReader.go og går gjennom loopen, stopper også starter den igjen.
+func benchmarkFireader åpner input filen i readwrite.go (func Firereader) og skriver og leser en output fil som den oppretter.
 defer func buf:= make lager en buffer for å holde på informasjonen som blir lest gjennom (n, err := fi.Read)
