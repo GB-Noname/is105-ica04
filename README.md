@@ -43,6 +43,7 @@ b. kjøres i mainFiles.go, kode ligger i /files
 
 #### kode-kommentarer
 
+mainFiles.go
 
 Tester om filene er identiske gjennom å hente inn de to textene og bruker deepequal for å sjekke om bytene er identiske. 
 Deretter kommer det en melding om filenes tilstand gjennom printLn-valgene som foretaes.
