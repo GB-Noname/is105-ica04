@@ -4,6 +4,17 @@
 https://github.com/GB-Noname/is105-ica04/tree/master/lineshift 
 
 b. lineshift.go og kode i /filetester
+(kode-kommentarer)
+
+lineshift.go programmet importerer "os" "files" og "filestester" omsetter tekst via filestobyteslices. Programmet tar et filnavn som inndata
+
+lineshifttester.go gir riktig resultat for om filen er laget for klassisk MAC, UNIX eller Windows. Den gir oss og et antall linjer i filen.
+
+Vi får en konklusjon om hvilket kode for linjeskift fra hvilket OS en tekstfil bruker. 
+
+textTester.go importerer pakken Lineshift og starter func FileStatCounter går gjennom hele byteslicen med tekst og så har du en manuell counter som sjekker hver eneste karakter i slicen. 
+Hvis counteren er lik 0 så skal det legges til karakteren som er lik eller som er inklinert hvis vi treffer på samme karakteren. 
+Elsen henter fra slicen, setter et nr til integeren og plusser på og returnerer til det nye slicen karakteren med tilhørende. 
 
 ### Oppgave 2 
 
