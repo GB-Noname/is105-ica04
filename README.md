@@ -26,13 +26,14 @@ buffReader.go
 func IoUtil, ReadFile leser filen du kaller fra (filename) 
 WriteFile skriver data til filen nevnt på (filename) Hvis filen ikke eksisterer, så oppretter WriteFile den ved bruk av perm; rettigheten
 
-func Buffio leser filen og Peek returnerer de første (n) bytes uten å lese videre på filen, neste (n) bytes kommer ved neste loop helt til break.
+func Buffio leser filen. Peek(n:5) returnerer de første (n) bytes uten å lese videre på filen, neste (n) bytes kommer ved neste loop helt til break.
 
 c. files_test.go
 (kode-kommentarer)
 
-func benchmarkFiles åpner filen som er gitt i filename i files.go og sjekker tørrelsen og hvor lang tid den bruker på å gå gjennom alle elementene i slicen
+func benchmarkFiles åpner filen som er gitt i filename i files.og sjekker tørrelsen og hvor lang tid den bruker på å gå gjennom alle elementene i slicen
 
-func benchmarkIoUtil   
+func benchmarkIoUtil leser filen som blir referert til i buffReader.go og går gjennom loopen, stopper også starter den igjen.
 
-
+func benchmarkFireader åpner input filen i readwrite.go (func Firereader) og skriver og leser en output fil som den oppretter.
+defer func buf:= make lager en buffer for å holde på informasjonen som blir lest gjennom (n, err := fi.Read)
